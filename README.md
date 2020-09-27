@@ -1,4 +1,4 @@
 # Regex-combined-emojis
-A regular expression that matches the Full Emoji List and the Full Emoji Modifier List
+A JavaScript regular expression that matches https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
 https://regex101.com/r/2ia4m2/1
