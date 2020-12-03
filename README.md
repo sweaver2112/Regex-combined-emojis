@@ -12,4 +12,6 @@ let regex = new RegExp(emojiPattern+\`{${num}}\`);
 
 let match = someString.match(regex) /*should match exactly 42 contiguous emojis*/;
 
+Regex101 demo that shows the pattern works:
+
 https://regex101.com/r/2ia4m2/1
