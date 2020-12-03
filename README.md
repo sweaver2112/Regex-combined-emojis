@@ -8,7 +8,7 @@ The string represents a single "emoji" token.  So, it can be quantified, put in 
 
 let num = 42;
 
-let regex = new RegExp(emojiPattern+``{${num}}``);
+let regex = new RegExp(emojiPattern+\`{${num}}\`);
 
 let match = someString.match(regex) /*should match exactly 42 contiguous emojis*/;
 
