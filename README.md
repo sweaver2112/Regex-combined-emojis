@@ -6,8 +6,8 @@ Usage:
 
 The string represents a single "emoji" token.  So, it can be quantified, put in an alternation, whatever:
 
-let num = 42;
+`let num = 42;
 let regex = new RegExp(emojiPattern+`{${num}}`);
-let match = someString.match(regex) /*should match exactly 42 contiguous emojis*/;
+let match = someString.match(regex) /*should match exactly 42 contiguous emojis*/;`
 
 https://regex101.com/r/2ia4m2/1
