@@ -9,7 +9,9 @@ The string represents a single "emoji" token.  So, it can be quantified, put in 
 `
 /*match exactly 42 emojis*/
 let num = 42 
+
 let regex = new RegExp(emojiPattern+`{${num}}`, "g")
+
 let matches = someString.matchAll(regex)
 `
 
