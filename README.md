@@ -13,7 +13,7 @@ let num = 42;
 
 let regex = new RegExp(emojiPattern+\`{${num}}\`);
 
-let match = someString.match(regex) /\*should match exactly 42 contiguous emojis\*/; 
+let match = someString.match(regex) /\*will match exactly 42 contiguous emojis\*/; 
 
 ----------------------------------------------------
 
