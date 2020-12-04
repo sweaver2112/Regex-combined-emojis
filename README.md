@@ -1,5 +1,5 @@
 # Regex-combined-emojis
-A JavaScript string regex that matches every emojis, that is, the combined lists:
+A JavaScript string regex that matches the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
 It's a programmatically built simple alternation with the longest sequences first. 
@@ -13,7 +13,13 @@ let num = 42;
 
 let regex = new RegExp(emojiPattern+\`{${num}}\`);
 
-let match = someString.match(regex) /\*will match exactly 42 contiguous emojis\*/; 
+let match = someString.match(regex);/\*will match exactly 42 contiguous emojis\*/ 
+
+let globalRegex = new RegExp(emojiPattern, "g");
+
+let matches = [...someString.matchAll(globalRegex)];
+    
+let emoCount = matches.length; /\*count of emojis\*/
 
 ----------------------------------------------------
 
