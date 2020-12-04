@@ -1,5 +1,8 @@
 # Regex-combined-emojis
-A JavaScript string regex that matches the combined lists https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
+A JavaScript string regex that matches the combined lists:
+https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
+
+It's a programmatically built simple alternation, with the longest sequences first. 
 
 Usage:
 
