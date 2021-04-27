@@ -10,7 +10,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 **-> Regex101 demo: https://regex101.com/r/2ia4m2/5**
 
-The expression is built programmatically from the source of the webpages listed above. The builder script is included, and will generate the updated list. 
+The expression is built programmatically from the source of the webpages listed above. The builder script is included, and will generate the updated pattern. 
 The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.
 
 ## Usage
