@@ -2,11 +2,11 @@
 A JavaScript string regex that matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
-**->current as of 4/27/2021**
+**->Current as of 4/27/2021**
 
-**->includes Flag patterns**
+**->Includes Flag patterns**
 
-**->current emoji count: 3507**
+**->Emoji Count: 3507**
 
 The pattern is built programmatically from the source of the webpages listed above. 
 It's a simple alternation with the longest sequences first, and it's pretty fast.
