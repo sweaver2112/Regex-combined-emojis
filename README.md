@@ -13,7 +13,7 @@ It's a simple alternation with the longest sequences first, and it's pretty fast
 
 The string represents a single "emoji" token.  So, it can be quantified, put in an alternation, whatever:
 
----------------------------------------------------
+
 ```
 let num = 42;
 
@@ -28,7 +28,6 @@ let matches = [...someString.matchAll(globalRegex)]; /\*extract all emojis\*/
 let emoCount = matches.length; /\*count of emojis\*/
 ```
 
-----------------------------------------------------
 
 *Regex101 demo:*
 
