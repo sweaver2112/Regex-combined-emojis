@@ -4,7 +4,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 **-> Current as of 4/27/2021**
 
-**-> Includes Flag patterns**
+**-> Includes all Skin Tone & Flag patterns**
 
 **-> Emoji Count: 3507**
 
