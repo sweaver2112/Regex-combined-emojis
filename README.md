@@ -2,11 +2,13 @@
 A JavaScript string regex that matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
-**->Current as of 4/27/2021**
+**-> Current as of 4/27/2021**
 
-**->Includes Flag patterns**
+**-> Includes Flag patterns**
 
-**->Emoji Count: 3507**
+**-> Emoji Count: 3507**
+
+**-> Regex101 demo: https://regex101.com/r/2ia4m2/5**
 
 The pattern is built programmatically from the source of the webpages listed above, so it's guaranteed to generate the updated list. 
 It's a simple alternation with the longest sequences first, and it's pretty fast.
@@ -29,14 +31,3 @@ let matches = [...someString.matchAll(globalRegex)]; /*extracts all emojis*/
     
 let emoCount = matches.length; /*count of emojis*/
 ```
-
-
-*Regex101 demo:*
-
-https://regex101.com/r/2ia4m2/5
-
-*Used In:*
-
-Automatic ASCII (Emoji World Edition):
-
-https://codepen.io/sweaver2112/pen/NWRxKra
