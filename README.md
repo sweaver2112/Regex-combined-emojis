@@ -12,12 +12,12 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 ```A Simpler Approach to Matching Emojis```
 
-The expression is built programmatically from the source of the webpages listed above. The builder script is included, and will generate the updated pattern. 
-The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.  There's not much to figure out in terms of pattern complexity, and that's a good thing.
+The expression is built programmatically from the source of the webpages listed above. The builder script is included, and will generate an expression updated with the newest emojis. 
+The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.  There's not much to figure out in terms of pattern complexity, which is good.
 
 ## Usage
 
-The string represents a single "emoji" token.  So, it can be quantified, put in an alternation, whatever:
+The pattern matches one single emoji.  So, it can be quantified, put in an alternation, whatever:
 
 
 ```javascript
