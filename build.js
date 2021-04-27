@@ -2,7 +2,7 @@
 Author:Scott Weaver @sweaver2112
 Date:4/27/2021
 Updater script that builds the 'all Emoji' regex by extracting the current list from unicode.org.
-(run in browswer console from unicode.org for best results)
+(run in browser console from unicode.org for best results)
 */
 let regex =  await buildPattern()
 console.log(regex)
