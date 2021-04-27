@@ -1,6 +1,8 @@
 # Regex-combined-emojis
-A JavaScript string regex that matches all Emojis (as of roughly October 2020), that is, the combined lists:
+A JavaScript string regex that matches All Emojis (updated: May 2021), that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
+->includes Flag patterns
+->current emoji count: 3507
 
 It's a programmatically built simple alternation with the longest sequences first, and it's pretty fast.
 
@@ -25,7 +27,7 @@ let emoCount = matches.length; /\*count of emojis\*/
 
 Regex101 demo:
 
-https://regex101.com/r/2ia4m2/1
+https://regex101.com/r/2ia4m2/5
 
 Used In:
 
