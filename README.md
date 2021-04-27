@@ -1,5 +1,6 @@
 # Regex-combined-emojis
-A JavaScript string regex that matches All Emojis, that is, the combined lists:
+```A Simpler Approach to Matching Emojis``` 
+This pattern matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
 **-> Current as of 4/27/2021**
