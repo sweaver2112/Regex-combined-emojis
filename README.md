@@ -1,4 +1,4 @@
-# Regex-combined-emojis
+# 🤓 Regex-combined-emojis 🧐
 A single regular expression that matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
