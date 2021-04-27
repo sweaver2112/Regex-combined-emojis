@@ -14,6 +14,7 @@ It's a simple alternation with the longest sequences first, and it's pretty fast
 The string represents a single "emoji" token.  So, it can be quantified, put in an alternation, whatever:
 
 ---------------------------------------------------
+```
 let num = 42;
 
 let quantifiedRegex = new RegExp(emojiPattern+\`{${num}}\`);
@@ -25,6 +26,7 @@ let globalRegex = new RegExp(emojiPattern, "g");
 let matches = [...someString.matchAll(globalRegex)]; /\*extract all emojis\*/
     
 let emoCount = matches.length; /\*count of emojis\*/
+```
 
 ----------------------------------------------------
 
