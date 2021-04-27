@@ -6,7 +6,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 It's a programmatically built simple alternation with the longest sequences first, and it's pretty fast.
 
-Usage:
+**Usage:**
 
 The string represents a single "emoji" token.  So, it can be quantified, put in an alternation, whatever:
 
@@ -25,11 +25,11 @@ let emoCount = matches.length; /\*count of emojis\*/
 
 ----------------------------------------------------
 
-Regex101 demo:
+*Regex101 demo:*
 
 https://regex101.com/r/2ia4m2/5
 
-Used In:
+*Used In:*
 
 Automatic ASCII (Emoji World Edition):
 
