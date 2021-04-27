@@ -13,7 +13,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 ```A Simpler Approach to Matching Emojis```
 
 The expression is built programmatically from the source of the webpages listed above. The builder script is included, and will generate an expression updated with the newest emojis. 
-The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.  By not trying to figure out any character ranges or surrogate pair sequences, pattern complexity is kept to a bare minimum.
+The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.  By not trying to figure out any character ranges or surrogate pair sequences and instead going brute-force and matching each character individually,  pattern complexity is kept to a bare minimum.
 
 ## Usage
 
