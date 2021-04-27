@@ -8,7 +8,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 **->Emoji Count: 3507**
 
-The pattern is built programmatically from the source of the webpages listed above. 
+The pattern is built programmatically from the source of the webpages listed above, so it's guaranteed to have the updated list. 
 It's a simple alternation with the longest sequences first, and it's pretty fast.
 
 ## Usage
