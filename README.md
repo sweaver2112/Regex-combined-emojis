@@ -1,4 +1,4 @@
-# Regex-combined-emojis
+## Regex-combined-emojis
 A JavaScript string regex that matches All Emojis (updated: May 2021), that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 ->includes Flag patterns
@@ -6,7 +6,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 It's a programmatically built simple alternation with the longest sequences first, and it's pretty fast.
 
-**Usage:**
+#Usage
 
 The string represents a single "emoji" token.  So, it can be quantified, put in an alternation, whatever:
 
