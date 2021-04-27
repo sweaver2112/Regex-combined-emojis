@@ -19,13 +19,13 @@ let num = 42;
 
 let quantifiedRegex = new RegExp(emojiPattern+\`{${num}}\`);
 
-let match = someString.match(quantifiedRegex);/\*will match exactly 42 contiguous emojis\*/ 
+let match = someString.match(quantifiedRegex);/*will match exactly 42 contiguous emojis*/ 
 
 let globalRegex = new RegExp(emojiPattern, "g");
 
-let matches = [...someString.matchAll(globalRegex)]; /\*extract all emojis\*/
+let matches = [...someString.matchAll(globalRegex)]; /*extracts all emojis*/
     
-let emoCount = matches.length; /\*count of emojis\*/
+let emoCount = matches.length; /*count of emojis*/
 ```
 
 
