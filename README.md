@@ -22,7 +22,7 @@ let match = someString.match(quantifiedRegex);/\*will match exactly 42 contiguou
 
 let globalRegex = new RegExp(emojiPattern, "g");
 
-let matches = [...someString.matchAll(globalRegex)];
+let matches = [...someString.matchAll(globalRegex)]; /\*extract all emojis\*/
     
 let emoCount = matches.length; /\*count of emojis\*/
 
