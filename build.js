@@ -17,6 +17,6 @@ async function buildPattern(){
     let htm = await fetchHTML()
     let reg = new RegExp("(?<=<td class='chars'>).*?(?=</td>)", "g")
     let matches = htm.matchAll(reg);
-    let regex = "(?:"+[...matches].join(" ").split(" ").map(e=>e.split('').map(s=>String.raw`\u${s.codePointAt(0).toString(16)}`).join("")).sort((a,b)=>b.length-a.length).join("|")+")"
+    let regex = "(?:"+[...matches].map(e=>e[0].split('').map(s=>String.raw`\u${s.codePointAt(0).toString(16)}`).join("")).sort((a,b)=>b.length-a.length).join("|")+")"
     return regex;
 }
