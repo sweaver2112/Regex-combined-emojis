@@ -1,6 +1,5 @@
 /*
-Author:Scott Weaver @sweaver2112
-Date:4/27/2021
+Author:Scott Weaver @sweaver2112 4/27/2021
 Updater script that builds the 'all Emoji' regex by extracting the current list from unicode.org.
 (run in browser console from unicode.org for best results)
 */
