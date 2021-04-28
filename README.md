@@ -24,22 +24,22 @@ It can be used as is to extract, count, or strip a string of emojis, or you can 
 
 
 ```javascript
-let pattern = new RegExp(emojiPattern, "g")
+let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
-let emojis = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)];
+let emojis = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)];
 // "😀,👩‍⚖️,🧗‍♀️,🥣"
 
 /*count of emojis*/
-let emoCount = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)].length
+let emoCount = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)].length
 // 4
 
 /*strip emojis from text*/
-let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(pattern, "")
+let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(emoRegex, "")
 // "This is the text."
 
 /*use the pattern string to build a custom regex*/
-let custom = new RegExp(".*"+emojiPattern+"{3}$") //match a string ending in 3 emojis
-let isMatch= custom.test("yep three here 😀👩‍⚖️🥣") //true
-isMatch = custom.test("nope 🥣😀") //false    
+let customRegex = new RegExp(".*"+emojiPattern+"{3}$") //match a string ending in 3 emojis
+let isMatch= customRegex.test("yep three here 😀👩‍⚖️🥣") //true
+isMatch = customRegex.test("nope 🥣😀") //false    
 ```
