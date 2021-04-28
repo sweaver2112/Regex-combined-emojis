@@ -31,6 +31,7 @@ let emojis = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(
 
 /*count of emojis*/
 let emoCount = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)].length
+// 4
 
 /*strip emojis from text*/
 let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(pattern, "")
