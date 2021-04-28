@@ -10,7 +10,9 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 **-> Regex101 demo: https://regex101.com/r/2ia4m2/5**
 
+
 ```A Simpler Approach to Matching Emojis```
+
 
 The expression is built programmatically from the source of the webpages listed above. The builder script is included, and will generate an expression updated with the newest emojis. 
 The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.  By not trying to figure out any character ranges or surrogate pair sequences and just matching each character individually,  pattern complexity is kept to a bare minimum.
