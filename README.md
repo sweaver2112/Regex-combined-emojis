@@ -23,15 +23,20 @@ The pattern matches one single emoji.  So, it can be quantified, put in an alter
 
 
 ```javascript
-let num = 42;
+let pattern = new RegExp(emojiPattern, "g")
 
-let quantifiedRegex = new RegExp(emojiPattern+\`{${num}}\`);
+/* extracting the emojis */
+let emojis = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)];
 
-let match = someString.match(quantifiedRegex);/*will match exactly 42 contiguous emojis*/ 
+/*count of emojis*/
+let emoCount = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)].length
 
-let globalRegex = new RegExp(emojiPattern, "g");
+/* replacing emojis */
+let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(pattern, "")
+/* => "This is the text."*/
 
-let matches = [...someString.matchAll(globalRegex)]; /*extracts all emojis*/
-    
-let emoCount = matches.length; /*count of emojis*/
+/*use the pattern string to build a custom regex*/
+let quantified = new RegExp(".*"+emojiPattern+"{3}$") //match a string ending in 3 emojis
+console.log(quantified.test("yep😀👩‍⚖️ three here")) //true
+console.log(quantified.test("😀 nope")) //false   
 ```
