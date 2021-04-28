@@ -25,14 +25,14 @@ The pattern matches one single emoji.  So, it can be quantified, put in an alter
 ```javascript
 let pattern = new RegExp(emojiPattern, "g")
 
-/* extracting the emojis */
+/*extracting the emojis*/
 let emojis = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)];
 // "😀,👩‍⚖️,🧗‍♀️,🥣"
 
 /*count of emojis*/
 let emoCount = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(pattern)].length
 
-/* replacing emojis */
+/*strip emojis from text*/
 let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(pattern, "")
 // "This is the text."
 
