@@ -37,6 +37,6 @@ let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(
 
 /*use the pattern string to build a custom regex*/
 let quantified = new RegExp(".*"+emojiPattern+"{3}$") //match a string ending in 3 emojis
-console.log(quantified.test("yep😀👩‍⚖️ three here")) //true
+console.log(quantified.test("yep three here 😀👩‍⚖️")) //true
 console.log(quantified.test("😀 nope")) //false   
 ```
