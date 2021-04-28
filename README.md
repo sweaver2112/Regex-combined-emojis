@@ -19,7 +19,8 @@ The pattern itself is a single, simple alternation with the longest sequences fi
 
 ## Usage
 
-The pattern matches one single emoji.  So, it can be quantified, put in an alternation, whatever:
+The pattern matches one single emoji.  
+It can be used as is to extract, count, or strip a string of emojis, or you can build your own regex with the pattern string.
 
 
 ```javascript
