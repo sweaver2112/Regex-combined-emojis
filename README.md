@@ -24,6 +24,7 @@ It can be used as is to extract, count, or strip a string of emojis, or you can 
 
 
 ```javascript
+//first, compile the pattern string into a regex
 let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
