@@ -8,7 +8,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 **-> Emoji Count: 3,507**
 
-**-> Regex101 demo: https://regex101.com/r/2ia4m2/5**
+**-> Regex101 demo: https://regex101.com/r/2ia4m2/7**
 
 
 ```A Simpler Approach to Matching Emojis```
