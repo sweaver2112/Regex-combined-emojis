@@ -41,6 +41,6 @@ let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(
 
 /*use the pattern string to build a custom regex*/
 let customRegex = new RegExp(".*"+emojiPattern+"{3}$") //match a string ending in 3 emojis
-let isMatch= customRegex.test("yep three here 😀👩‍⚖️🥣") //true
-isMatch = customRegex.test("nope 🥣😀") //false    
+let isMatch= customRegex.test("yep three here 😀👩‍⚖️🥣")
+isMatch = customRegex.test("nope 🥣😀")   
 ```
