@@ -2,7 +2,7 @@
 A single JavaScript (also works in Java and other flavors!) regular expression that matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
-**-> Current (against Unicode.org public lists) as of 4/30/2021 (run build.js to update the regex)**
+**-> Current (against Unicode.org public lists) as of 4/30/2021 (*you could run build.js to get an updated pattern)**
 
 **-> Includes all Skin Tone & Flag patterns**
 
