@@ -21,7 +21,7 @@ By not worrying about character ranges or surrogate pair sequences, and just mat
 ## Usage
 
 The pattern matches one single emoji.
-It can be used as is to extract, count, or strip a string of emojis, or you can build your own regex with the pattern string.
+It can be used "as is" to extract, count, or strip a string of emojis, or you can build your own regex with the pattern string.
 
 
 ```javascript
