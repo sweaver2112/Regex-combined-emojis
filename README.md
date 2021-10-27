@@ -1,5 +1,5 @@
 # 🤠  Regex-combined-emojis 🧐
-A single JavaScript (also works in Java and other flavors!) regular expression that matches All Emojis, that is, the combined lists:
+A single JavaScript (also works in Java, Python, and probably many other flavors) regular expression that matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts-13.1/full-emoji-modifiers.html
 
 **-> Current against Unicode.org's public lists as of 4/30/2021**
