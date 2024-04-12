@@ -6,7 +6,7 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 
 **-> Includes all Skin Tone & Flag patterns**
 
-**-> Emoji Count: 3782**
+**-> Emoji Count: 3782 | Version: 15.1**
 
 **-> Regex101 demo (safe version): https://regex101.com/r/2ia4m2/16**
 
