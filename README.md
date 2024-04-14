@@ -33,12 +33,12 @@ It can be used "as is" to extract, count, or strip a string of emojis, or you ca
 import emojiPatterns from 'regex-combined-emojis';
 
 /*compile the pattern string into a regex*/
-let emojiPattern = emojiPatterns.compactEmojiPattern //or: emojiPatterns.compactEmojiPattern
+let emojiPattern = emojiPatterns.emojiPattern //or: emojiPatterns.compactEmojiPattern
 let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
 let emojis = [...`This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.`.matchAll(emoRegex)];
-console.log(JSON.stringify(emojis.flat())) //["🙆🏿‍♂️","👩‍⚖️","🧗‍♀️","🥣"]
+console.log(emojis.flat()) //["🙆🏿‍♂️","👩‍⚖️","🧗‍♀️","🥣"]
 
 /*count of emojis*/
 let emoCount = [..."This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)].length;
