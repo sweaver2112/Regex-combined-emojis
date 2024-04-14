@@ -1,5 +1,5 @@
 # 🤠  Regex-combined-emojis 🧐
-A single JavaScript (also works in Java, Python, and probably many other flavors) regular expression that matches All Emojis, that is, the combined lists:
+A single JavaScript (also works in .NET and Java, and (compact version) Python) regular expression that matches All Emojis, that is, the combined lists:
 https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/emoji/charts/full-emoji-modifiers.html
 
 **-> Current against Unicode.org's public lists as of 4/11/2024**
@@ -11,7 +11,6 @@ https://unicode.org/emoji/charts/full-emoji-list.html and https://unicode.org/em
 **-> Regex101 demo (safe version): https://regex101.com/r/2ia4m2/16**
 
 **-> Regex101 demo (compact version): https://regex101.com/r/NpduZT/1**
-
 
 ```A Simpler Approach to Matching Emojis```
 
@@ -27,25 +26,32 @@ It can be used "as is" to extract, count, or strip a string of emojis, or you ca
 
 
 ```javascript
+import emojiPatterns from 'regex-combined-emojis';
+
 /*compile the pattern string into a regex*/
+let emojiPattern = emojiPatterns.compactEmojiPattern //or: emojiPatterns.compactEmojiPattern
 let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
-let emojis = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)];
-// "😀,👩‍⚖️,🧗‍♀️,🥣"
+let emojis = [...`This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.`.matchAll(emoRegex)];
+console.log(JSON.stringify(emojis)) //"[["🙆"],["♂"],["👩‍⚖️"],["🧗‍♀️"],["🥣"]]"
 
 /*count of emojis*/
-let emoCount = [..."This 😀👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)].length
-// 4
+let emoCount = [..."This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)].length;
+console.log(`emoCount:${emoCount}`);//4
 
 /*strip emojis from text*/
-let stripped = "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replaceAll(emoRegex, "")
-// "This is the text."
+let stripped =  "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replace(emoRegex, "");
+console.log(`${stripped}`) //"This is the text."
 
-/*use the pattern string to build a custom regex*/
-let customRegex = new RegExp(".*"+emojiPattern+"{3}$") //match a string ending in 3 emojis
+/*build a custom regex: match a string ending in 3 emojis*/
+let customRegex = new RegExp(".*"+emojiPattern+"{3}$") 
+
 let isMatch= customRegex.test("yep three here 😀👩‍⚖️🥣")
-isMatch = customRegex.test("nope 🥣😀")   
+console.log(`true test for ending in exactly 3 emojis:${isMatch}`)
+
+isMatch = customRegex.test("nope 🥣😀") 
+console.log(`false test for ending in exactly 3 emojis:${isMatch}`)
 ```
 
 ## The Pattern (compact version)
