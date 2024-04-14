@@ -19,6 +19,10 @@ The builder script is included and will generate an expression updated with the 
 The pattern itself is a single, simple alternation with the longest sequences first, and it runs fast.  
 By not worrying about character ranges or surrogate pair sequences, and just matching each character individually, pattern complexity is kept to a bare minimum.
 
+## Installation
+
+npm install regex-combined-emojis
+
 ## Usage
 
 The pattern matches one single emoji.
@@ -29,7 +33,7 @@ It can be used "as is" to extract, count, or strip a string of emojis, or you ca
 import emojiPatterns from 'regex-combined-emojis';
 
 /*compile the pattern string into a regex*/
-let emojiPattern = emojiPatterns.compactEmojiPattern //or: emojiPatterns.compactEmojiPattern
+let emojiPattern = emojiPatterns.emojiPattern //OR: emojiPatterns.compactEmojiPattern
 let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
