@@ -1,6 +1,6 @@
 {
   "name": "regex-combined-emojis",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A regular expression that matches all emojis.  Works in Javascript, .NET, and Java.",
   "main": "index.js",
   "type": "module",

@@ -33,28 +33,28 @@ It can be used "as is" to extract, count, or strip a string of emojis, or you ca
 import emojiPatterns from 'regex-combined-emojis';
 
 /*compile the pattern string into a regex*/
-let emojiPattern = emojiPatterns.emojiPattern //OR: emojiPatterns.compactEmojiPattern
+let emojiPattern = emojiPatterns.compactEmojiPattern //or: emojiPatterns.compactEmojiPattern
 let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
 let emojis = [...`This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.`.matchAll(emoRegex)];
-console.log(JSON.stringify(emojis)) //"[["🙆"],["♂"],["👩‍⚖️"],["🧗‍♀️"],["🥣"]]"
+console.log(JSON.stringify(emojis.flat())) //["🙆🏿‍♂️","👩‍⚖️","🧗‍♀️","🥣"]
 
 /*count of emojis*/
 let emoCount = [..."This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.".matchAll(emoRegex)].length;
 console.log(`emoCount:${emoCount}`);//4
 
 /*strip emojis from text*/
-let stripped =  "This 😀👩‍⚖️is the 🧗‍♀️text🥣.".replace(emoRegex, "");
+let stripped =  "This 🙆🏿‍♂️👩‍⚖️is the 🧗‍♀️text🥣.".replace(emoRegex, "");
 console.log(`${stripped}`) //"This is the text."
 
 /*build a custom regex: match a string ending in 3 emojis*/
 let customRegex = new RegExp(".*"+emojiPattern+"{3}$") 
 
-let isMatch= customRegex.test("yep three here 😀👩‍⚖️🥣")
+let isMatch= customRegex.test("yep three here 🙆🏿‍♂️👩‍⚖️🥣")
 console.log(`true test for ending in exactly 3 emojis:${isMatch}`)
 
-isMatch = customRegex.test("nope 🥣😀") 
+isMatch = customRegex.test("nope 🥣🙆🏿‍♂️") 
 console.log(`false test for ending in exactly 3 emojis:${isMatch}`)
 ```
 
