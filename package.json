@@ -1,6 +1,6 @@
 {
   "name": "regex-combined-emojis",
-  "version": "1.3.0",
+  "version": "1.0.0",
   "description": "A regular expression that matches all emojis.  Works in Javascript, .NET, and Java.",
   "main": "index.js",
   "type": "module",
@@ -12,10 +12,12 @@
     "url": "git+https://github.com/sweaver2112/Regex-combined-emojis.git"
   },
   "keywords": [
-    "regular-expression",
+    "regular expressions",
     "regex",
     "unicode",
-    "emojis"
+    "emojis",
+    "regexp",
+    "code points"
   ],
   "author": "Scott Weaver",
   "license": "MIT",
