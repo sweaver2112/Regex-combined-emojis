@@ -21,7 +21,9 @@ By not worrying about character ranges or surrogate pair sequences, and just mat
 
 ## Installation
 
-`npm install regex-combined-emojis`
+```javascript
+npm install regex-combined-emojis`
+```
 
 ## Usage
 
@@ -30,10 +32,9 @@ It can be used "as is" to extract, count, or strip a string of emojis, or you ca
 
 
 ```javascript
-import emojiPatterns from 'regex-combined-emojis';
+import { emojiPattern, compactEmojiPattern } from 'regex-combined-emojis';
 
-/*compile the pattern string into a regex*/
-let emojiPattern = emojiPatterns.emojiPattern //or: emojiPatterns.compactEmojiPattern
+/*compile to regex using either pattern string*/
 let emoRegex = new RegExp(emojiPattern, "g")
 
 /*extracting the emojis*/
@@ -52,10 +53,10 @@ console.log(`${stripped}`) //"This is the text."
 let customRegex = new RegExp(".*"+emojiPattern+"{3}$") 
 
 let isMatch= customRegex.test("yep three here 🙆🏿‍♂️👩‍⚖️🥣")
-console.log(`true test for ending in exactly 3 emojis:${isMatch}`)
+console.log(`true test for ending in 3 emojis:${isMatch}`)
 
 isMatch = customRegex.test("nope 🥣🙆🏿‍♂️") 
-console.log(`false test for ending in exactly 3 emojis:${isMatch}`)
+console.log(`false test for ending in 3 emojis:${isMatch}`)
 ```
 
 ## The Pattern (compact version)
