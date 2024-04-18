@@ -22,7 +22,7 @@ By not worrying about character ranges or surrogate pair sequences, and just mat
 ## Installation
 
 ```javascript
-npm install regex-combined-emojis`
+npm install regex-combined-emojis
 ```
 
 ## Usage
