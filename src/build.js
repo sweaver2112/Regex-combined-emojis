@@ -1,29 +1,74 @@
 /*
-Author:Scott Weaver @sweaver2112 4/11/2024
-Updater script that builds the 'all Emoji' regex by extracting the current list from unicode.org.
-(due to CORS and the prohibitive size of Unicode's pages, easier just to paste the raw HTML instead of trying to fetch)
+Author: Scott Weaver @sweaver2112 5/5/2026
+Builder script that parses Unicode emoji HTML, writes a raw source list,
+and regenerates index.js exports automatically.
 */
-let HTML = `<raw HTML from https://unicode.org/emoji/charts/full-emoji-list.html & https://unicode.org/emoji/charts/full-emoji-modifiers.html>` 
-let regex = buildPattern()
-console.log(regex)
+import { readFileSync, writeFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-function buildPattern(){
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const projectRoot = join(__dirname, '..');
 
-    let reg = new RegExp("(?<=<td class=\"chars\">).*?(?=</td>)", "g")
-    let matches = HTML.matchAll(reg);
-    //console.log([...matches].join(" ")) <---generate plaintext space-separated string of all Emojis
-    let regex = "(?:"+[...matches]
-        .map(e=>e[0] //get full match for each emoji
-            .split('') //split each character of the emoji into an array
-            .map(s=>String.raw`\u${padHex(s.codePointAt(0).toString(16))}`) //map array of chars to their hex codepoint prefixed with \u
-        .join("")) //join the /u{hex} sequences together
-        .sort((a,b)=>b.length-a.length)//sort the sequences longest to shortest
-        .join("|")+")" //join the sequences with | for alternation
+const htmlPath = join(__dirname, 'rawHTML.html');
+const rawEmojiPath = join(__dirname, 'rawEmoji.txt');
+const indexPath = join(projectRoot, 'index.js');
 
-    //return regex; //safe version
-    return regex.replace(/\\u(?!002a)([0-9A-F]{4})/ig, (m, g1) => String.fromCharCode(`0x${g1}`)); //compact "just the emojis" version (with tweak to exclude the asterisk emoji)
+const html = readFileSync(htmlPath, 'utf8');
+const emojiListFromHtml = extractEmojiFromHtml(html);
+
+if (emojiListFromHtml.length === 0) {
+    throw new Error('No emoji rows found in rawHTML.html. The source HTML structure may have changed.');
 }
-function padHex(hex){
- while(hex.length<4) hex = "0"+hex
- return hex;
+
+// Keep a plain-text source-of-truth file that can be diffed and reused.
+writeFileSync(rawEmojiPath, emojiListFromHtml.join('\n') + '\n', 'utf8');
+
+const rawEmojiText = readFileSync(rawEmojiPath, 'utf8');
+const emojiList = rawEmojiText
+    .split(/\r?\n/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+const regex = buildPatternFromEmojiList(emojiList);
+const indexContents = buildIndexFile(regex);
+writeFileSync(indexPath, indexContents, 'utf8');
+
+console.log(`Wrote ${emojiList.length} emoji entries to ${rawEmojiPath}`);
+console.log(`Regenerated ${indexPath}`);
+
+function extractEmojiFromHtml(sourceHtml) {
+    const reg = new RegExp("(?<=<td class='chars'>).*?(?=</td>)", 'g');
+    return [...sourceHtml.matchAll(reg)].map((m) => m[0]);
+}
+
+function buildPatternFromEmojiList(list) {
+    return '(?:' + list
+        .map((emoji) => toUtf16Escapes(emoji))
+        .sort((a, b) => b.length - a.length)
+        .join('|') + ')';
+}
+
+function toUtf16Escapes(emoji) {
+    return emoji
+        .split('')
+        .map((unit) => String.raw`\u${padHex(unit.codePointAt(0).toString(16))}`)
+        .join('');
+}
+
+function buildIndexFile(regex) {
+    return [
+        '/* Author:Scott Weaver May 2026 */',
+        `var emojiPattern = String.raw\`${regex}\`;`,
+        "var compactEmojiPattern = emojiPattern.replace(/\\\\u(?!002a)([0-9A-F]{4})/ig, (m, g1) => String.fromCharCode(`0x${g1}`));",
+        '',
+        'export { emojiPattern, compactEmojiPattern }',
+        ''
+    ].join('\n');
+}
+
+function padHex(hex) {
+    let value = hex;
+    while (value.length < 4) value = '0' + value;
+    return value;
 }
